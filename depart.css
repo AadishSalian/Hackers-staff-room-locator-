@@ -1,0 +1,174 @@
+
+/* Import Google Fonts - Poppins font family for the entire document */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+/* Global styles: Reset default margin, padding, and set the default font */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font family to all elements */
+}
+
+/* Body styles: Center content, set background color and prevent overflow */
+body {
+    display: flex;  /* Flexbox layout to center content */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    min-height: 100vh; /* Ensure the body takes up full viewport height */
+    background: #0f0f0f; /* Set dark background color */
+    overflow: hidden; /* Prevent content from overflowing the body */
+    border: 10px solid orange; /* Add orange border around the body */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding inside the border */
+}
+/* Menu Bar Styling */
+.menu-bar {
+    position: fixed;
+     top: 0; left: 0;
+      height: 100%; width: 50px; 
+      background-color: #111111;
+       transition: width 0.3s;
+    overflow-x: hidden; 
+} 
+   .menu-bar:hover {
+width: 200px; 
+/* Expand menu width on hover */
+}
+ .menu-toggle {
+    background-color: #000000; 
+    color: ORANGE;
+ border: none;
+  padding: 15px; 
+   font-size: 20px; 
+  cursor: pointer; 
+   width: 100%;
+    text-align: left;
+} 
+    .menu-items { 
+    display: none;
+   flex-direction: column;
+} 
+.menu-bar:hover .menu-items {
+    display: flex; 
+    /* Show the menu items when menu bar is hovered */
+    } 
+    .menu-items a {
+    padding: 15px;
+     text-decoration: none;
+      color: orange;
+       display: block; 
+       transition: background-color 0.2s; 
+   }
+    .menu-items a:hover {
+        background-color: #000000;
+        }
+
+
+/* Unordered list styles for the navigation menu */
+ul {
+    position: relative; /* Allow absolute positioning inside the list */
+    display: flex; /* Use flexbox to align list items */
+    flex-direction: column; /* Stack list items vertically */
+}
+
+/* Remove default bullet points from list items */
+ul li {
+    list-style: none; /* Remove default list item bullet */
+}
+
+/* Before pseudo-element for each list item to display text animation */
+ul li:before {
+    content: attr(data-text); /* Use the 'data-text' attribute as content */
+    position: absolute; /* Position absolutely within the list item */
+    top: 50%; /* Position vertically centered */
+    left: 50%; /* Position horizontally centered */
+    transform: translate(-50%, -50%); /* Correct positioning (center element) */
+    color: #fff; /* Set white text color */
+    font-size: 6em; /* Large font size */
+    font-weight: 700; /* Bold text */
+    pointer-events: none; /* Prevent interaction with the pseudo-element */
+    opacity: 0; /* Initially hide the pseudo-element */
+    letter-spacing: 20px; /* Increase space between characters */
+    transition: 0.5s; /* Smooth transition for opacity and letter-spacing */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Hover effect for list items - gradually make the text visible and remove spacing */
+ul li:hover:before {
+    opacity: 0.05; /* Make the pseudo-element slightly visible */
+    letter-spacing: 0px; /* Reset the letter-spacing */
+}
+
+/* Style for the anchor tags (links) inside list items */
+ul li a {
+    position: relative; /* Allows positioning of the pseudo-element within the link */
+    display: inline-block; /* Make the link behave like an inline block */
+    padding: 6px 15px; /* Padding around the text */
+    text-decoration: none; /* Remove default underline */
+    background: #f0a519; /* Background color (orange) */
+    color: #fff; /* White text color */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 2px; /* Slight letter-spacing */
+    overflow: hidden; /* Hide content that overflows the link */
+    transition: 0.5s; /* Smooth transition for transform and opacity */
+    z-index: 1; /* Ensure the link is on top of the pseudo-element */
+}
+
+/* When hovering over the entire unordered list, make links fade out */
+ul:hover li a {
+    opacity: 0; /* Fade out the links */
+}
+
+/* Hover effect for the anchor tags (links) to scale up */
+ul li a:hover {
+    transform: scale(1.4); /* Scale the link up */
+    z-index: 1000; /* Bring the hovered link to the front */
+    background: #fdad18; /* Lighter orange background on hover */
+    opacity: 1; /* Make the link fully visible */
+}
+
+/* Before pseudo-element for the anchor tag (links) to create an animated highlight */
+ul li a:before {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute; /* Position it absolutely inside the link */
+    top: 0; /* Align with the top */
+    left: -100px; /* Start from the left outside of the link */
+    width: 80px; /* Width of the highlight effect */
+    height: 100%; /* Full height of the link */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent); /* Gradient for the highlight */
+    transform: skewX(35deg); /* Skew the gradient for a dynamic effect */
+    transition: 0s; /* No transition initially */
+}
+
+/* Hover effect for the link's before pseudo-element to animate the highlight */
+ul li a:hover:before {
+    left: calc(100% + 100px); /* Move the highlight from left to right */
+    transition: 0.5s; /* Smooth transition for the movement */
+    transition-delay: 0.2s; /* Delay the start of the transition */
+}
+
+/* Header section to display the title at the top of the page */
+.header {
+    display: flex; /* Flexbox layout for the header */
+    justify-content: center; /* Center the header content horizontally */
+    align-items: center; /* Center the header content vertically */
+    top: 0; /* Fixed at the top of the page */
+    padding: 10px; /* Padding around the header */
+    border-bottom: 2px solid black; /* Black border at the bottom of the header */
+    position: fixed; /* Keep the header fixed at the top */
+}
+
+/* Title styles inside the header */
+.header .title {
+    font-size: 35px; /* Font size of the title */
+    color: rgb(0, 0, 0); /* Black text color */
+    margin-left: 10px; /* Add margin on the left side */
+    font-family: 'Montserrat', sans-serif; /* Different font family for the title */
+    text-shadow: 0px 0px 10px rgb(255, 166, 1), /* Orange glowing effect */
+                 0px 0px 20px orange,
+                 0px 0px 40px orange,
+                 0px 0px 60px orange;
+    background: linear-gradient(90deg, #0f0f0f, #000000); /* Dark gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text (for gradient effect) */
+    background-clip: text; /* Apply the background gradient to the text */
+}

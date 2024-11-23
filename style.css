@@ -1,0 +1,204 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: #010615;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card Styles */
+.box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  background: #060c21;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Subtle shadow for default state */
+}
+
+.box:hover {
+  height: 400px;
+  box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.2); /* Glow effect for the box */
+}
+
+.box .imgBx {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents the image from overflowing out of the container */
+}
+
+.box .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the entire box while maintaining aspect ratio */
+  object-position: center; /* Ensures the image is centered if it's cropped */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1; /* Image is fully visible by default */
+}
+
+.box:hover .imgBx img {
+  opacity: 1; /* Image will still be fully visible when hovered */
+}
+
+/* Box border effects with glowing borders */
+.box:before, .box::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.box:before {
+  background: linear-gradient(235deg, #15ff00, #010615, #00bcd4);
+  box-shadow: 0 0 15px rgba(104, 255, 4, 0.925), 0 0 25px rgba(0, 188, 212, 0.7); /* Glowing gradient effect */
+}
+
+.box:nth-child(2):before,
+.box:nth-child(2):after {
+  background: linear-gradient(235deg, #ff005e, #010615, #fbffee);
+  box-shadow: 0 0 15px rgba(255, 0, 94, 0.7), 0 0 25px rgba(251, 254, 254, 0.7); /* Glowing gradient effect */
+}
+
+.box:nth-child(3):before,
+.box:nth-child(3):after {
+  background: linear-gradient(235deg, #772aff, #010615, #2196F3);
+  box-shadow: 0 0 15px rgba(119, 42, 255, 0.7), 0 0 25px rgba(33, 150, 243, 0.7); /* Glowing gradient effect */
+}
+.box:nth-child(4):before,
+.box:nth-child(4):after {
+  background: linear-gradient(235deg, #fffb2a, #010615, #2196F3);
+  box-shadow: 0 0 15px rgba(247, 252, 0, 0.7), 0 0 25px rgba(33, 150, 243, 0.7); /* Glowing gradient effect */
+}
+.box:nth-child(5):before,
+.box:nth-child(5):after {
+  background: linear-gradient(235deg, #ff2aff, #010615, #2196F3);
+  box-shadow: 0 0 15px rgba(255, 42, 149, 0.7), 0 0 25px rgba(33, 150, 243, 0.7); /* Glowing gradient effect */
+}
+
+/* Stronger glow effect on hover */
+.box:hover:before,
+.box:hover::after {
+  box-shadow: 0 0 40px rgb(255, 136, 0), 0 0 60px rgb(255, 136, 0); /* Stronger gradient glow on hover */
+}
+
+.box:nth-child(2):hover:before,
+.box:nth-child(2):hover::after {
+  box-shadow: 0 0 40px  rgb(255, 136, 0), 0 0 60px  rgb(255, 136, 0); /* Stronger gradient glow on hover */
+}
+
+.box:nth-child(3):hover:before,
+.box:nth-child(3):hover::after {
+  box-shadow: 0 0 40px  rgb(255, 136, 0), 0 0 60px  rgb(255, 136, 0); /* Stronger gradient glow on hover */
+}
+.box:nth-child(4):hover:before,
+.box:nth-child(4):hover::after {
+  box-shadow: 0 0 40px  rgb(255, 136, 0), 0 0 60px  rgb(255, 136, 0); /* Stronger gradient glow on hover */
+}
+.box:nth-child(5):hover:before,
+.box:nth-child(5):hover::after {
+  box-shadow: 0 0 40px  rgb(255, 136, 0), 0 0 60px  rgb(255, 136, 0); /* Stronger gradient glow on hover */
+}
+
+/* Content inside the box */
+.box .content {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.box:hover .content {
+  opacity: 1;
+}
+
+.box .content h2 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.box .content h3 span {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+/* Add this to your style.css */
+
+/* Search Bar Styles */
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.search-container input:focus {
+  border-color: #00bcd4; /* Change this to match your design */
+  outline: none;
+}
+
+/* Adjust the card container for responsiveness */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+

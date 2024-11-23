@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HACKERS</title>
+        <link rel="stylesheet" href="aboutus.css">
+        <link rel="icon" href="hack.png">
+        <style>
+            body {
+                background-color: #000;
+                color: orange; /* Changed text color to orange */
+                font-family: Consolas, monospace;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+            }
+
+            .wavy {
+                position: relative;
+                -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .wavy span {
+                position: relative;
+                display: inline-block;
+                color: orange; /* Changed text color to orange */
+                font-size: 4em;
+                text-transform: uppercase;
+                animation: animate 1s ease-in-out infinite;
+                animation-delay: calc(0.1s * var(--i));
+            }
+
+            @keyframes animate {
+                0% {
+                    transform: translateY(0px);
+                }
+                20% {
+                    transform: translateY(-20px);
+                }
+                40%, 100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .team-introduction {
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+            }
+
+            .team-introduction h1 {
+                margin-bottom: 20px;
+                color: orange; /* Changed text color to orange */
+            }
+
+            .team-introduction p {
+                font-size: 1.2em;
+                color: orange; /* Changed text color to orange */
+                line-height: 1.7;
+                margin-top: 20px;
+            }
+
+            .team-introduction h2 {
+                font-size: 1.5em;
+                color: orange; /* Changed text color to orange */
+                margin-top: 20px;
+                text-decoration: underline;
+            }
+
+            .key-features {
+                margin-top: 20px;
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+            }
+
+            .key-features ul {
+                list-style-type: disc;
+                margin-left: 40px;
+            }
+
+            .key-features li {
+                font-size: 1.1em;
+                color: orange; /* Changed text color to orange */
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wavy">
+           <span style="--i:1;">A</span>
+           <span style="--i:2;">B</span>
+           <span style="--i:3;">O</span>
+           <span style="--i:4;">U</span>
+           <span style="--i:5;">T</span>
+           <span style="--i:6;"> </span>
+           <span style="--i:7;"> </span>
+           <span style="--i:8;">U</span>
+           <span style="--i:9;">S</span>
+        </div>
+
+        <!-- New section for the text -->
+        <div class="team-introduction">
+            <h1>Hello, We Are Team Hackers!</h1>
+            <p>
+                A Staff Room Locator is a system or tool used in educational institutions, workplaces, or organizations to efficiently manage the allocation, availability, and location of staff rooms.
+                It provides a way for staff members (teachers, employees, or faculty) to find and access designated spaces within the building where they can relax, work, collaborate, or take breaks.
+            </p>
+
+            <!-- Key Features Section -->
+            <h2>Key Features:</h2>
+            <div class="key-features">
+                <ul>
+                    <li><strong>Room Availability:</strong> It indicates whether a staff room is occupied or available, helping staff avoid confusion and wait times.</li>
+                    <li><strong>Mapping and Navigation:</strong> Some systems may include interactive maps that guide staff to the correct location of a staff room, which is particularly helpful in large buildings or campuses.</li>
+                    <li><strong>Booking and Scheduling:</strong> Staff may have the option to reserve a room in advance through a booking system, ensuring fair access to shared spaces.</li>
+                    <li><strong>Room Information:</strong> Information like room capacity, facilities (e.g., seating, equipment), and amenities can be included to help staff choose the most appropriate room for their needs.</li>
+                    <li><strong>Digital Integration:</strong> Staff room locators may be part of a larger digital system or app that integrates with calendars, class schedules, and other resource management tools.</li>
+                </ul>
+            </div>
+
+            <p>
+                In educational environments, it helps manage the shared spaces that are frequently used by teachers or other staff members, ensuring a smooth, organized experience.
+                In workplaces, it can also aid in improving the overall efficiency of staff room usage and contribute to better work-life balance by ensuring that staff have a dedicated space to unwind or collaborate.
+            </p>
+        </div>
+    </body>
+</html>
